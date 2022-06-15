@@ -8,3 +8,8 @@ Swedish 🇸🇪 for 'expense', <em>**Kostnad**</em> is a personal financing too
 - [ ] Graphical Depiction of Expenditures
 - [ ] Sort Transactions by **date**, **amount**, and **category**
 
+#### Built With:
+- React
+- Redux Toolkit
+- Vite
+- Tailwind
