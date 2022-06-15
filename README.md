@@ -13,3 +13,4 @@ Swedish 🇸🇪 for 'expense', <em>**Kostnad**</em> is a personal financing too
 - Redux Toolkit
 - Vite
 - Tailwind
+- 💛
