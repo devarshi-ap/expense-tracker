@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTransaction } from "../store/transactionSlice";
+import { nanoid } from 'nanoid'
 
 export default function Form() {
 
@@ -8,6 +11,7 @@ export default function Form() {
     type
     amount
     */
+
     let dateObj = new Date(),
         todaysDate = `${dateObj.getFullYear()}-${dateObj.getMonth() + 1}-${dateObj.getDate()}`;
 
@@ -16,6 +20,9 @@ export default function Form() {
     const [type, setType] = useState('Expense');
     const [date, setDate] = useState(todaysDate);
     const [amount, setAmount] = useState(0);
+
+    // instantiate dispatcher
+    const dispatch = useDispatch();
     
     // https://mint.intuit.com/mint-categories/
     const categories = [
@@ -46,6 +53,14 @@ export default function Form() {
         e.preventDefault();
 
         // Dispatch Action
+        dispatch(addTransaction({
+            transactionName: name,
+            transactionCategory: category,
+            transactionType: type,
+            transactionDate: date,
+            transactionAmount: amount,
+            transactionId: nanoid(),
+        }))
 
         // Refresh State
         setName('');
