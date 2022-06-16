@@ -1,6 +1,19 @@
+import { useState } from "react";
+
 export default function Form() {
 
-    // https://images.squarespace-cdn.com/content/v1/52b4e622e4b09ec38d13e690/1586381935317-HYDDUF0KBXO24XV5J8PA/budgetlistcategories.png
+    /*
+    name
+    category
+    type
+    amount
+    */
+
+    const [name, setName] = useState('');
+    const [category, setCategory] = useState('Bills & Utilities');
+    const [type, setType] = useState('Expense');
+    const [amount, setAmount] = useState(0);
+    
     // https://mint.intuit.com/mint-categories/
     const categories = [
         'Bills & Utilities',
@@ -22,10 +35,9 @@ export default function Form() {
         'Transportation',
     ];
 
-    const categoryOptions = categories.map(category => (
-        <option value={category}>{category}</option>
+    const categoryOptions = categories.map((category, index) => (
+        <option key={index} value={category}>{category}</option>
     ))
-    
 
     return (
         <div className="m-2 block p-7 max-w-lg bg-[#f1f5f9] rounded-lg border border-gray-200 shadow-md dark:border-gray-700 dark:hover:bg-gray-700">
@@ -33,17 +45,17 @@ export default function Form() {
                 <input
                     className="w-full h-9 mb-1 rounded-sm text-center"
                     type="text" 
-                    // value={}
-                    // onChange={}
+                    value={name}
+                    onChange={e => setName(e.target.value)}
                     placeholder="Transaction Name"
                 ></input>
 
-                <select id="categoriesList" name="type" className="w-full my-2 h-9 rounded-sm">
+                <select value={category} onChange={e => setCategory(e.target.value)} name="type" className="w-full my-2 h-9 rounded-sm">
                     {categoryOptions}
                 </select>
 
                 <div className="flex justify-between mt-1 mb-3">
-                    <select name="type" className="w-4/12">
+                    <select value={type} onChange={e => setType(e.target.value)} name="type" className="w-4/12">
                         <option value="Expense">Expense</option>
                         <option value="Deposit">Deposit</option>
                     </select>
@@ -51,8 +63,8 @@ export default function Form() {
                     <input
                         className="w-7/12 h-9 rounded-sm text-center"
                         type="number" 
-                        // value={}
-                        // onChange={}
+                        value={amount}
+                        onChange={e => setAmount(e.target.value)}
                         placeholder="Amount ($)"
                     ></input>
                 </div>

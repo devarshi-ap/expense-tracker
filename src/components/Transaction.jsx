@@ -1,14 +1,15 @@
 import { MdFoodBank } from 'react-icons/md'
+import { HiOutlineTrash } from 'react-icons/hi'
 
 export default function Expenses() {
     return (
-        <>
-            <div className="m-2 p-4 h-[7rem] max-w-lg bg-[#2b3545] rounded-lg shadow-md hover:scale-105 transition duration-700 grid grid-cols-5 gap-4">
+        <div className='inline-flex'>
+            <div className="m-2 p-4 h-[7rem] max-w-lg bg-[#2b3545] rounded-lg shadow-md hover:scale-105 transition duration-700 grid grid-cols-6 gap-4">
                 <div className="my-auto block bg-[#334155] rounded-sm m-auto">
                     <MdFoodBank className='text-white text-6xl' />
                 </div>
 
-                <div className="p-1 col-span-4 bg-[#334155] rounded-sm flex flex-col justify-evenly">
+                <div className="p-1 col-span-5 bg-[#334155] rounded-sm flex flex-col justify-evenly">
                     <div className="flex justify-between">
                         <h1 className="w-fit text-md tracking-wider font-bold text-white my-auto">Spotify Monthly Fee</h1>
                         {/* <h2 className="w-fit text-md font-bold text-[#6ee7b7] my-auto ml-1">+30$</h2> */}
@@ -21,6 +22,12 @@ export default function Expenses() {
                     </div>
                 </div>
             </div>
-        </>
+
+            <div className="my-auto">
+                <button aria-label="Delete" type="button">
+                    <HiOutlineTrash className="text-xl"/>
+                </button>
+            </div>
+        </div>
     )
 }
