@@ -25,6 +25,11 @@ Install Dependencies
 $ npm i
 ```
 
+Built Production Vite
+```bash
+$ npm run build
+```
+
 Whip up fast as f*ck Vite ⚡️ dev server
 ```bash
 $ npm run dev
