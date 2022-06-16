@@ -29,21 +29,3 @@ Whip up fast as f*ck Vite ⚡️ dev server
 ```bash
 $ npm run dev
 ```
-
-bills & utilities = RiBillLine
-childcare = FaChild
-debt = GiPayMoney
-education = TbSchool
-food & dining = MdOutlineFoodBank
-Giving = FaDonate
-Health & Fitness = IoFitnessOutline
-Housing = BsHouse
-Income = FaMoneyBillWave
-Medical = FaBriefcaseMedical,  
-Other = VscSymbolField, HiOutlineCubeTransparent
-Personal Care = RiMentalHealthLine
-Rec. & Entertainment = BsEmojiSmile
-Savings = MdOutlineSavings
-Shopping = HiOutlineShoppingBag
-Taxes = HiOutlineReceiptTax
-Transportation = MdEmojiTransportation
