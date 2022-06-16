@@ -8,10 +8,18 @@ export const transactionSlice = createSlice({
   },
   reducers: {
     addTransaction: (state, action) => {
-      state.transactionsList.push(action.payload);
+        state.transactionsList.push(action.payload);
+    },
+    deleteTransaction: (state, action) => {
+        let transactionToBeRemoved = state.transactionsList.filter(transaction => transaction.transactionId == action.payload)[0]
+        
+        if (transactionToBeRemoved.transactionType === 'Expense') {
+            state.balance += parseInt(transactionToBeRemoved.transactionAmount, 10);
+        } else if (transactionToBeRemoved.transactionType === 'Deposit') {
+            state.balance -= parseInt(transactionToBeRemoved.transactionAmount, 10);
+        }
 
-    //   state.balance +=
-    //     action.payload.type === 'Expense' ? -Math.abs(action.payload) : action.payload;
+        state.transactionsList = state.transactionsList.filter(transaction => transaction.transactionId !== action.payload)
     },
     expense: (state, action) => {
         state.balance -= parseInt(action.payload, 10);
@@ -25,5 +33,5 @@ export const transactionSlice = createSlice({
   },
 });
 
-export const { addTransaction, expense, deposit, resetBalance } = transactionSlice.actions;
+export const { addTransaction, expense, deposit, resetBalance, deleteTransaction } = transactionSlice.actions;
 export default transactionSlice.reducer;

@@ -15,6 +15,7 @@ export default function TransactionLog() {
                     date={item.transactionDate}
                     amount={item.transactionAmount}
                     key={item.transactionId}
+                    myKey={item.transactionId}
                 />
             ))}
         </>
