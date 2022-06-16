@@ -9,6 +9,7 @@ Swedish 🇸🇪 for 'expense', <em>**Kostnad**</em> is a personal financing too
 - Perform CRUD-Ops on Transactions
 - Graphical Depiction of Expenditures
 - Sort Transactions by **date**, **amount**, and **category**
+- Pixel Gif + $Balance-TextColor indicating financial cracked/stable state
 
 #### Built With:
 - React
