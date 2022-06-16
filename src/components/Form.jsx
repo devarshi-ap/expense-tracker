@@ -15,7 +15,7 @@ export default function Form() {
         'Medical',
         'Other',
         'Personal Care',
-        'Recreation & Entertainment',
+        'Rec. & Entertainment',
         'Savings',
         'Shopping',
         'Taxes',
