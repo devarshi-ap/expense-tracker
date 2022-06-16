@@ -9,12 +9,15 @@ export const transactionSlice = createSlice({
   reducers: {
     addTransaction: (state, action) => {
       state.transactionsList.push(action.payload);
+
+    //   state.balance +=
+    //     action.payload.type === 'Expense' ? -Math.abs(action.payload) : action.payload;
     },
     expense: (state, action) => {
-        state.balance -= action.payload;
+        state.balance -= parseInt(action.payload, 10);
     },
     deposit: (state, action) => {
-        state.balance += action.payload;
+        state.balance += parseInt(action.payload, 10);
     },
     resetBalance: state => {
         state.balance = 0;

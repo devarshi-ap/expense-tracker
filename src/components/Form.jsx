@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTransaction } from "../store/transactionSlice";
+import { addTransaction, expense, deposit } from "../store/transactionSlice";
 import { nanoid } from 'nanoid'
 
 export default function Form() {
@@ -63,6 +63,12 @@ export default function Form() {
             transactionId: nanoid(),
         }))
 
+        if (type === "Expense") {
+            dispatch(expense(amount))
+        } else if (type === "Deposit") {
+            dispatch(deposit(amount))
+        }
+
         // Refresh State
         setName('');
         setCategory('Bills & Utilities');
@@ -80,6 +86,7 @@ export default function Form() {
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder="Transaction Name"
+                    required
                 ></input>
 
                 <select value={category} onChange={e => setCategory(e.target.value)} name="type" className="w-full my-2 h-9 rounded-sm">
@@ -98,6 +105,7 @@ export default function Form() {
                         value={amount}
                         onChange={e => setAmount(e.target.value)}
                         placeholder="Amount ($)"
+                        required
                     ></input>
                 </div>
 
