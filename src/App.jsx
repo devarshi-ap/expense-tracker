@@ -1,6 +1,6 @@
 import Balance from "./components/Balance";
 import Form from './components/Form';
-import Transaction from './components/Transaction';
+import TransactionLog from './components/TransactionLog';
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
                 <Form />
             </div>
             <div className="w-full mb-1 pl-3 py-2 text-xl font-mono font-semibold underline text-metal">Recent Transactions</div>
-            <Transaction />
+            <TransactionLog />
         </div>
     </div>
   );

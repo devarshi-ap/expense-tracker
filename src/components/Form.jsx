@@ -9,6 +9,7 @@ export default function Form() {
     name
     category
     type
+    date
     amount
     */
 
