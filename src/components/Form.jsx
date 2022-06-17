@@ -69,12 +69,12 @@ export default function Form() {
             dispatch(deposit(amount))
         }
 
-        // Optional Refresh State
-        // setName('');
-        // setCategory('Bills & Utilities');
-        // setType('Expense');
-        // setDate(todaysDate)
-        // setAmount(0);
+        // Refresh State
+        setName('');
+        setCategory('Bills & Utilities');
+        setType('Expense');
+        setDate(todaysDate)
+        setAmount(0);
     }
 
     return (
