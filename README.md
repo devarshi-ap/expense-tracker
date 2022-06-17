@@ -35,3 +35,5 @@ Whip up fast as f*ck Vite ⚡️ dev server
 ```bash
 $ npm run dev
 ```
+
+Psyyy
