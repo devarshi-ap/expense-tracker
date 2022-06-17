@@ -70,11 +70,11 @@ export default function Form() {
         }
 
         // Refresh State
-        setName('');
-        setCategory('Bills & Utilities');
-        setType('Expense');
-        setDate(todaysDate)
-        setAmount(0);
+        // setName('');
+        // setCategory('Bills & Utilities');
+        // setType('Expense');
+        // setDate(todaysDate)
+        // setAmount(0);
     }
 
     return (
