@@ -36,4 +36,4 @@ Whip up fast as f*ck Vite ⚡️ dev server
 $ npm run dev
 ```
 
-Psyyy
+Psyyyy
