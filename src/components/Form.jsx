@@ -3,6 +3,10 @@ import { useDispatch } from "react-redux";
 import { addTransaction, expense, deposit } from "../store/transactionSlice";
 import { nanoid } from 'nanoid'
 
+import { ToastContainer, toast, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 export default function Form() {
 
     /*
@@ -63,10 +67,29 @@ export default function Form() {
             transactionId: nanoid(),
         }))
 
+        const notificationConfig = {
+            position: "bottom-right",
+            transition: Flip,
+            theme:'dark',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        }
+
         if (type === "Expense") {
             dispatch(expense(amount))
-        } else if (type === "Deposit") {
+
+            // notification
+            toast.success('Expense Added!', notificationConfig);
+        }
+        else if (type === "Deposit") {
             dispatch(deposit(amount))
+
+            // notification
+            toast.success('Deposit Added!', notificationConfig);
         }
 
         // Refresh State
@@ -123,6 +146,18 @@ export default function Form() {
                     type="submit"
                 >+ Add Transaction</button>
             </form>
+
+            <ToastContainer
+                position="bottom-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     )
 }
