@@ -2,15 +2,30 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{jsx,js}'],
   theme: {
-    extend: {},
+    extend: {
+        'animation': {
+            'text':'text 10s ease infinite',
+        },
+        'keyframes': {
+            'text': {
+                '0%, 100%': {
+                   'background-size':'200% 200%',
+                    'background-position': 'left center'
+                },
+                '50%': {
+                   'background-size':'200% 200%',
+                    'background-position': 'right center'
+                }
+            },
+        },
+    },
     colors: {
       transparent: 'transparent',
       white: '#ffffff',
-      purple: '#3f3cbb',
-      midnight: '#121063',
       metal: '#565584',
-      silver: '#ecebff',
-      blue: '#87ceeb'
+      blue: '#87ceeb',
+      green: '#80e316',
+      red: '#d6001b',
     },
   },
   plugins: [],
