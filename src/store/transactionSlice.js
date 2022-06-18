@@ -14,9 +14,9 @@ export const transactionSlice = createSlice({
         let transactionToBeRemoved = state.transactionsList.filter(transaction => transaction.transactionId == action.payload)[0]
         
         if (transactionToBeRemoved.transactionType === 'Expense') {
-            state.balance += parseInt(transactionToBeRemoved.transactionAmount, 10);
+            state.balance += parseFloat(transactionToBeRemoved.transactionAmount, 10);
         } else if (transactionToBeRemoved.transactionType === 'Deposit') {
-            state.balance -= parseInt(transactionToBeRemoved.transactionAmount, 10);
+            state.balance -= parseFloat(transactionToBeRemoved.transactionAmount, 10);
         }
 
         state.transactionsList = state.transactionsList.filter(transaction => transaction.transactionId !== action.payload)
@@ -27,11 +27,17 @@ export const transactionSlice = createSlice({
     deposit: (state, action) => {
         state.balance += parseInt(action.payload, 10);
     },
+    sortPriceHighToLow: state => {
+        state.transactionsList = state.transactionsList.sort((a, b) => a.transactionAmount - b.transactionAmount)
+    },
+    sortPriceLowToHigh: state => {
+        state.transactionsList = state.transactionsList.sort((a, b) => b.transactionAmount - a.transactionAmount)
+    },
     resetBalance: state => {
         state.balance = 0;
     }
   },
 });
 
-export const { addTransaction, expense, deposit, resetBalance, deleteTransaction } = transactionSlice.actions;
+export const { addTransaction, deleteTransaction, expense, deposit, sortPriceHighToLow, sortPriceLowToHigh, resetBalance } = transactionSlice.actions;
 export default transactionSlice.reducer;

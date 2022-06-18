@@ -12,6 +12,9 @@ import { VscSymbolField } from 'react-icons/vsc'
 import { useDispatch } from "react-redux";
 import { deleteTransaction } from '../store/transactionSlice'
 
+import { toast, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Transaction(props) {
     
     const { name, category, type, date, amount, myKey } = props
@@ -41,6 +44,22 @@ export default function Transaction(props) {
 
     const dispatch = useDispatch();
 
+    const handleDelete = () => {
+        dispatch(deleteTransaction(myKey))
+
+        toast.success('Successfully Removed!', {
+            position: "bottom-right",
+            transition: Flip,
+            theme:'dark',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
+
     return (
         <div className='inline-flex'>
             <div className="m-2 p-4 h-[7rem] max-w-lg bg-[#2b3545] rounded-lg shadow-md hover:scale-105 transition duration-700 grid grid-cols-6 gap-4">
@@ -68,7 +87,7 @@ export default function Transaction(props) {
 
             {/* DELETE BIN ICON */}
             <div className="my-auto">
-                <button aria-label="Delete" type="button" onClick={() => dispatch(deleteTransaction(myKey))}>
+                <button aria-label="Delete" type="button" onClick={handleDelete}>
                     <HiOutlineTrash className="text-xl"/>
                 </button>
             </div>
