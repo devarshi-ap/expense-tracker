@@ -6,7 +6,7 @@ export default function TransactionLog() {
     const transactions = useSelector(state => state.transactions.transactionsList)
     
     return (
-        <>
+        <div data-cy="txn-log">
             {transactions.map(item => (
                 <Transaction 
                     name={item.transactionName}
@@ -18,6 +18,6 @@ export default function TransactionLog() {
                     myKey={item.transactionId}
                 />
             ))}
-        </>
+        </div>
     )
 }

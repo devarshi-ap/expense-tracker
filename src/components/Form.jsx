@@ -110,14 +110,19 @@ export default function Form() {
                     onChange={e => setName(e.target.value)}
                     placeholder="Transaction Name"
                     required
+                    data-cy="txn-name"
                 ></input>
 
-                <select value={category} onChange={e => setCategory(e.target.value)} name="type" className="w-full my-2 h-9 rounded-sm">
-                    {categoryOptions}
-                </select>
+                <select
+                    value={category}
+                    onChange={e => setCategory(e.target.value)}
+                    name="type"
+                    className="w-full my-2 h-9 rounded-sm"
+                    data-cy="txn-category"
+                >{categoryOptions}</select>
 
                 <div className="flex justify-between mt-1 mb-3">
-                    <select value={type} onChange={e => setType(e.target.value)} name="type" className="w-4/12">
+                    <select value={type} onChange={e => setType(e.target.value)} name="type" className="w-4/12" data-cy="txn-type">
                         <option value="Expense">Expense</option>
                         <option value="Deposit">Deposit</option>
                     </select>
@@ -128,6 +133,7 @@ export default function Form() {
                         value={amount}
                         onChange={e => setAmount(e.target.value)}
                         placeholder="Amount ($)"
+                        data-cy="txn-amount"
                         required
                     ></input>
                 </div>
@@ -138,12 +144,14 @@ export default function Form() {
                         type="date"
                         value={date}
                         onChange={e => setDate(e.target.value)}
+                        data-cy="txn-date"
                     ></input>
                 </div>
                 
                 <button
                     className="w-full bg-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-sm hover:scale-105 transition duration-700"
                     type="submit"
+                    data-cy="txn-submit"
                 >+ Add Transaction</button>
             </form>
 
