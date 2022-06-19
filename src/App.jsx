@@ -24,7 +24,7 @@ export default function App() {
     }
 
     return (
-    <div className="grid place-content-center bg-[#e0f2fe] min-h-screen py-10">
+    <div className="grid place-content-center bg-[#e0f2fe] min-h-screen py-10" data-cy="main-app">
         <div className="flex flex-col sm:flex-col md:w-[30rem]">
             <div>
                 <Balance />
