@@ -36,4 +36,18 @@ Whip up fast as f*ck Vite ⚡️ dev server
 $ npm run dev
 ```
 
-Psyyyy
+#### E2E Testing (Cypress):
+
+Open Cypress
+```bash
+$ npx cypress open
+```
+
+In the Cypress app window:
+- launch e2e suite in browser of your choice
+- run home_page.cy.js
+- sit back and watch the magic 🪄 unfold
+
+To add your own tests, see ./cypress/e2e/
+
+Psyyyy 🦆
