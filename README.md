@@ -13,6 +13,7 @@ Swedish 🇸🇪 for 'expense', <em>**Kostnad**</em> is a personal financing too
 - Redux Toolkit
 - Vite
 - Tailwind
+- Cypress (E2E Testing)
 - 💛
 
 #### Getting Started:
