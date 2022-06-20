@@ -33,11 +33,17 @@ export const transactionSlice = createSlice({
     sortPriceLowToHigh: state => {
         state.transactionsList = state.transactionsList.sort((a, b) => b.transactionAmount - a.transactionAmount)
     },
+    sortDateHighToLow: state => {
+        state.transactionsList = state.transactionsList.sort((a, b) => new Date(a.transactionDate) - new Date(b.transactionDate))
+    },
+    sortDateLowToHigh: state => {
+        state.transactionsList = state.transactionsList.sort((a, b) => new Date(b.transactionDate) - new Date(a.transactionDate))
+    },
     resetBalance: state => {
         state.balance = 0;
     }
   },
 });
 
-export const { addTransaction, deleteTransaction, expense, deposit, sortPriceHighToLow, sortPriceLowToHigh, resetBalance } = transactionSlice.actions;
+export const { addTransaction, deleteTransaction, expense, deposit, sortPriceHighToLow, sortPriceLowToHigh, sortDateHighToLow, sortDateLowToHigh, resetBalance } = transactionSlice.actions;
 export default transactionSlice.reducer;
