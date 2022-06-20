@@ -1,12 +1,12 @@
-# Kostnad, is an Expense-Budget Tracker App
+# Psyy, because keeping track of your budgets can be confusing sometimes.
 
-Swedish 🇸🇪 for 'expense', <em>**Kostnad**</em> is a personal financing tool that assists in easily tracking and visualizing any number of expenses- be it annual or day-to-day.
+<em>**Psy**</em> is a personal financing tool that helps track and visualize all of your expenses.
 
 #### Core Features:
-- View History of Categorized Transactions
+- View History of Transactions
 - Perform CRUD-Ops on Transactions
 - Graphical Depiction of Expenditures
-- Sort Transactions by **date**, **amount**, and **category**
+- Sort Transactions Chronologically by **Date**, Numerically by **Amount**, and Alphabetically by **Category**
 
 #### Built With:
 - React
