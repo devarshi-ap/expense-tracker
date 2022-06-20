@@ -87,7 +87,7 @@ export default function Transaction(props) {
 
             {/* DELETE BIN ICON */}
             <div className="my-auto">
-                <button aria-label="Delete" type="button" onClick={handleDelete}>
+                <button aria-label="Delete" type="button" onClick={handleDelete} data-cy="delete">
                     <HiOutlineTrash className="text-xl"/>
                 </button>
             </div>
