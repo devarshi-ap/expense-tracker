@@ -1,6 +1,12 @@
 # Psyy, because keeping track of your budgets can be confusing sometimes.
 
-<em>**Psy**</em> is a personal financing tool that helps track and visualize all of your expenses.
+<div align="center">
+<!--   <img src="http://up.54fcnr.com/pic_source/a0/4c/6b/a04c6b3eff6c4c33f25d90abc1fa2fb4.gif" width="200" title="hover text"> -->
+  <img src="https://i.pinimg.com/originals/b2/21/1b/b2211b045ee1f34dacfeb83b7f540ae6.gif" width="200" title="hover text">
+<!--   <img src="https://c.tenor.com/IdQJwgoeSNwAAAAC/pokemon-what.gif" width="200" title="hover text"> -->
+</div>
+
+<em>**Psyy**</em> is a personal financing tool that helps track and visualize all of your expenses.
 
 #### Core Features:
 - View History of Transactions
@@ -42,9 +48,8 @@ $ npx cypress open
 
 In the Cypress app window:
 - launch e2e suite in browser of your choice
-- run home_page.cy.js
+- run home_page.cy.js (found in ./cypress/e2e/)
 - sit back and watch the magic 🪄 unfold
 
-To add your own tests, see ./cypress/e2e/
-
+<br />
 Psyyyy 🦆
