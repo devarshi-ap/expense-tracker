@@ -1,15 +1,16 @@
 import Balance from "./components/Balance";
 import Form from './components/Form';
 import TransactionLog from './components/TransactionLog';
-import { BsSortNumericDownAlt, BsSortNumericUpAlt, BsSortDownAlt, BsSortUpAlt } from 'react-icons/bs'
+import { BsSortNumericDownAlt, BsSortNumericUpAlt, BsSortDownAlt, BsSortUpAlt, BsSortAlphaDown, BsSortAlphaUp } from 'react-icons/bs'
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { sortPriceHighToLow, sortPriceLowToHigh, sortDateHighToLow, sortDateLowToHigh } from "./store/transactionSlice";
+import { sortPriceHighToLow, sortPriceLowToHigh, sortDateHighToLow, sortDateLowToHigh, sortCategoryHighToLow, sortCategoryLowToHigh } from "./store/transactionSlice";
 
 export default function App() {
     
     const [sortPrice, setSortPrice] = useState('high')
     const [sortDate, setSortDate] = useState('high')
+    const [sortCategory, setSortCategory] = useState('high')
 
     const dispatch = useDispatch();
 
@@ -35,6 +36,17 @@ export default function App() {
         }
     }
 
+    const toggleCategorySort = () => {
+        if (sortCategory === 'high') {
+            setSortCategory('low')
+            dispatch(sortCategoryLowToHigh())
+        }
+        else if (sortCategory === 'low') {
+            setSortCategory('high')
+            dispatch(sortCategoryHighToLow())
+        }
+    }
+
     return (
     <div className="grid place-content-center bg-[#e0f2fe] min-h-screen py-10" data-cy="main-app">
         <div className="flex flex-col sm:flex-col md:w-[30rem]">
@@ -47,12 +59,16 @@ export default function App() {
                 <div className="inline-flex">
 
                     {sortPrice === 'high' ? 
-                        <BsSortNumericDownAlt data-tooltip-target="tooltip-default" className="text-3xl text-metal mx-1" onClick={togglePriceSort}/> : 
-                        <BsSortNumericUpAlt className="text-3xl text-metal mx-1" onClick={togglePriceSort}/>
+                        <BsSortNumericUpAlt className="text-3xl text-metal mx-1" onClick={togglePriceSort} title="sort-by-price"/> :
+                        <BsSortNumericDownAlt data-tooltip-target="tooltip-default" className="text-3xl text-metal mx-1" onClick={togglePriceSort} title="sort-by-price"/>
                     }
                     {sortDate === 'high' ? 
-                        <BsSortDownAlt className="text-3xl text-metal mx-1" onClick={toggleDateSort}/> :
-                        <BsSortUpAlt className="text-3xl text-metal mx-1" onClick={toggleDateSort}/>
+                        <BsSortDownAlt className="text-3xl text-metal mx-1" onClick={toggleDateSort} title="sort-by-date"/> :
+                        <BsSortUpAlt className="text-3xl text-metal mx-1" onClick={toggleDateSort} title="sort-by-date"/>
+                    }
+                    {sortCategory === 'high' ? 
+                        <BsSortAlphaDown className="text-3xl text-metal mx-1" onClick={toggleCategorySort} title="sort-by-category"/> :
+                        <BsSortAlphaUp className="text-3xl text-metal mx-1" onClick={toggleCategorySort} title="sort-by-category"/>
                     }
                 </div>
             </div>
