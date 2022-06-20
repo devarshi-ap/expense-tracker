@@ -14,18 +14,18 @@ export const transactionSlice = createSlice({
         let transactionToBeRemoved = state.transactionsList.filter(transaction => transaction.transactionId == action.payload)[0]
         
         if (transactionToBeRemoved.transactionType === 'Expense') {
-            state.balance += Number(Number(transactionToBeRemoved.transactionAmount.toFixed(2)));
+            state.balance = (state.balance*100 + transactionToBeRemoved.transactionAmount*100)/100;
         } else if (transactionToBeRemoved.transactionType === 'Deposit') {
-            state.balance -= Number(Number(transactionToBeRemoved.transactionAmount.toFixed(2)));
+            state.balance = (state.balance*100 - transactionToBeRemoved.transactionAmount*100)/100;
         }
 
         state.transactionsList = state.transactionsList.filter(transaction => transaction.transactionId !== action.payload)
     },
     expense: (state, action) => {
-        state.balance = Number(Number(state.balance).toFixed(2)) - Number(Number(action.payload).toFixed(2));
+        state.balance = ((state.balance * 100) - (action.payload * 100))/100;
     },
     deposit: (state, action) => {
-        state.balance = Number(Number(state.balance).toFixed(2)) + Number(Number(action.payload).toFixed(2));
+        state.balance = ((state.balance * 100) + (action.payload * 100))/100;
     },
     sortPriceHighToLow: state => {
         state.transactionsList = state.transactionsList.sort((a, b) => a.transactionAmount - b.transactionAmount)
