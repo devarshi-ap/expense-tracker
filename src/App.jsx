@@ -1,14 +1,14 @@
 import Balance from "./components/Balance";
 import Form from './components/Form';
 import TransactionLog from './components/TransactionLog';
-import { BsSortNumericDownAlt, BsSortNumericUpAlt, BsSortDownAlt, BsSortUpAlt, BsSortAlphaDown, BsSortAlphaUp } from 'react-icons/bs'
+import { BsSortNumericDown, BsSortNumericUp, BsSortDownAlt, BsSortUpAlt, BsSortAlphaDown, BsSortAlphaUp } from 'react-icons/bs'
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sortPriceHighToLow, sortPriceLowToHigh, sortDateHighToLow, sortDateLowToHigh, sortCategoryHighToLow, sortCategoryLowToHigh } from "./store/transactionSlice";
 
 export default function App() {
     
-    const [sortPrice, setSortPrice] = useState('high')
+    const [sortPrice, setSortPrice] = useState('low')
     const [sortDate, setSortDate] = useState('high')
     const [sortCategory, setSortCategory] = useState('high')
 
@@ -17,11 +17,11 @@ export default function App() {
     const togglePriceSort = () => {
         if (sortPrice === 'high') {
             setSortPrice('low')
-            dispatch(sortPriceLowToHigh())
+            dispatch(sortPriceHighToLow())
         }
         else if (sortPrice === 'low') {
             setSortPrice('high')
-            dispatch(sortPriceHighToLow())
+            dispatch(sortPriceLowToHigh())
         }
     }
 
@@ -59,8 +59,8 @@ export default function App() {
                 <div className="inline-flex">
 
                     {sortPrice === 'high' ? 
-                        <BsSortNumericUpAlt className="text-3xl text-metal mx-1" onClick={togglePriceSort} title="sort-by-price"/> :
-                        <BsSortNumericDownAlt data-tooltip-target="tooltip-default" className="text-3xl text-metal mx-1" onClick={togglePriceSort} title="sort-by-price"/>
+                        <BsSortNumericUp className="text-3xl text-metal mx-1" onClick={togglePriceSort} title="sort-by-price"/> :
+                        <BsSortNumericDown data-tooltip-target="tooltip-default" className="text-3xl text-metal mx-1" onClick={togglePriceSort} title="sort-by-price"/>
                     }
                     {sortDate === 'high' ? 
                         <BsSortDownAlt className="text-3xl text-metal mx-1" onClick={toggleDateSort} title="sort-by-date"/> :
