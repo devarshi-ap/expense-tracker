@@ -24,7 +24,7 @@ export default function Form() {
     const [category, setCategory] = useState('Bills & Utilities');
     const [type, setType] = useState('Expense');
     const [date, setDate] = useState(todaysDate);
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState();
 
     // instantiate dispatcher
     const dispatch = useDispatch();
@@ -93,11 +93,11 @@ export default function Form() {
         }
 
         // Refresh State
-        // setName('');
-        // setCategory('Bills & Utilities');
-        // setType('Expense');
-        // setDate(todaysDate)
-        // setAmount(0);
+        setName('');
+        setCategory('Bills & Utilities');
+        setType('Expense');
+        setDate(todaysDate)
+        setAmount('');
     }
 
     return (
