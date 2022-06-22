@@ -17,7 +17,7 @@
 #### Built With:
 - React
 - Redux Toolkit
-- Vite
+- ViteJS
 - Tailwind
 - Cypress (E2E Testing)
 - 💛
