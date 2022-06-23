@@ -139,13 +139,15 @@ export default function Form() {
                 </div>
 
                 <div className="mt-2 mb-5">
-                    <input
-                        className="w-full h-9 rounded-sm text-center"
-                        type="date"
-                        value={date}
-                        onChange={e => setDate(e.target.value)}
-                        data-cy="txn-date"
-                    ></input>
+                    <label>
+                        <input
+                            className="w-full h-9 rounded-sm text-center"
+                            type="date"
+                            value={date}
+                            onChange={e => setDate(e.target.value)}
+                            data-cy="txn-date"
+                        ></input>
+                    </label>
                 </div>
                 
                 <button
