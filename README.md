@@ -1,6 +1,6 @@
-## *Psyy*, because keeping track of your budgets can be confusing at times.
+## *Psyyy*, because keeping track of your budgets can be confusing at times.
 
-#### <em>**Psyy**</em> is a personal financing tool that helps track and visualize all of your expenses.
+#### <em>**Psyyy**</em> is a personal financing tool that helps track and visualize all of your expenses.
 
 <div align="center">
 <!--   <img src="http://up.54fcnr.com/pic_source/a0/4c/6b/a04c6b3eff6c4c33f25d90abc1fa2fb4.gif" width="200" title="hover text"> -->
