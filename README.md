@@ -13,7 +13,6 @@ https://user-images.githubusercontent.com/59234436/175199908-83a4755f-9064-4391-
 #### Core Features:
 - View History of Transactions
 - Perform CRUD-Ops on Transactions
-- Data Visualization of Expenditures with D3.js
 - Sort Transactions Chronologically by **Date**, Numerically by **Amount**, and Alphabetically by **Category**
 
 #### Built With:
