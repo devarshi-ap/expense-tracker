@@ -54,4 +54,4 @@ In the Cypress app window:
 - sit back and watch the magic 🪄 unfold
 
 <br />
-Psyyy-🦆
+Psyy-🦆
