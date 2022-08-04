@@ -36,7 +36,7 @@ Built Production Vite
 $ npm run build
 ```
 
-Whip up fast as f*ck Vite ⚡️ dev server
+Whip up fast as duck Vite ⚡️ dev server
 ```bash
 $ npm run dev
 ```
