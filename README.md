@@ -49,7 +49,7 @@ $ npx cypress open
 ```
 
 In the Cypress app window:
-- launch e2e suite in browser of your choice
+- launch e2e suite in the browser of your choice
 - run home_page.cy.js (found in ./cypress/e2e/)
 - sit back and watch the magic 🪄 unfold
 
